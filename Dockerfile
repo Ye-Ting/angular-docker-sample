@@ -13,6 +13,8 @@ RUN apt-get update && \
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
+EXPOSE 80
+
 RUN npm install -g bower gulp
 
 WORKDIR /app
