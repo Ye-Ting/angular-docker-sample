@@ -1,4 +1,4 @@
-FROM node:0.12.7-slim
+FROM node:0.12.7-wheezy
 
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 RUN echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list
@@ -12,6 +12,11 @@ RUN apt-get update && \
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
+
+# Application 
+RUN sudo add-apt-repository ppa:fkrull/deadsnakes && \
+	sudo apt-get update && \
+	sudo apt-get install python2.7
 
 RUN npm install -g bower gulp
 
