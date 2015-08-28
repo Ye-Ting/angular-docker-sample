@@ -1,0 +1,22 @@
+{
+  "local": {
+    "config": {
+      "apiUrl": "http://api.angular-docker-sample.app/api/local"
+    }
+  },
+  "test": {
+    "config": {
+      "apiUrl": "http://api.angular-docker-sample.app/api/test"
+    }
+  },
+  "production": {
+    "config": {
+      "apiUrl": "http://api.angular-docker-sample.app/api/production"
+    }
+  },
+  "needReplace": {
+    "config": {
+      "apiUrl": "THIS_IS_API_URL_NEED_REPLACE"
+    }
+  }
+}

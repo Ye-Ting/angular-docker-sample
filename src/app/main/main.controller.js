@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, config) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -14,7 +14,10 @@
     vm.creationDate = 1440670034025;
     vm.showToastr = showToastr;
 
+    vm.apiUrl = config.apiUrl;
+    
     activate();
+
 
     function activate() {
       getWebDevTec();
@@ -24,7 +27,7 @@
     }
 
     function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
+      toastr.info('Fork <a href="https://github.com/Ye-Ting/angular-docker-sample" target="_blank"><b>angular-docker-sample</b></a>');
       vm.classAnimation = '';
     }
 

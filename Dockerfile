@@ -27,6 +27,4 @@ COPY . /app/
 
 RUN gulp build 
 
-RUN cp -R /app/dist/*  /usr/share/nginx/html
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD gulp env:replace && cp -r dist/* /usr/share/nginx/html/ && nginx -g 'daemon off;'
