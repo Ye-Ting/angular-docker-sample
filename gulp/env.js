@@ -32,7 +32,7 @@ gulp.task('env:config', function () {
 
 gulp.task('env:replace', ['cdn'], function () {
   var envConfig   = jsonfile.readFileSync(path.join(conf.paths.src,
-    '/app/config.json'));
+    '/config.json'));
   var needReplace = envConfig.needReplace;
   var env         = process.env.APP_ENV || 'local';
 
